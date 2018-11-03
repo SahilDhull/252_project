@@ -14,7 +14,7 @@
     "target": "es5"
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts", "src/pages/map/map.js"
   ],
   "exclude": [
     "node_modules",
