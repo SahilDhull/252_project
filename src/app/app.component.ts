@@ -7,11 +7,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { MapPage } from '../pages/map/map';
-import { Welcome } from '../pages/welcome/welcome';
 // import { CameraPage } from '../pages/camera/camera';
 
 import { File } from '@ionic-native/file';
-import { HomePage } from '../pages/home/home';
 @Component({
   templateUrl: 'app.html'
 })
@@ -27,10 +25,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      // {title: 'Rockets', component: RocketsPage},
-      {title: 'Welcome', component: Welcome},
       {title: 'Map', component: MapPage},
-      // {title: 'Camera', component: CameraPage}
     ];
 
   }
