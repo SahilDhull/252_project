@@ -6,21 +6,14 @@ import { MyApp } from './app.component';
 import { AuthService } from '../providers/auth-service/auth-service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { RocketsPage } from '../pages/rockets/rockets';
-import { Welcome } from '../pages/welcome/welcome';
-import { Login } from '../pages/login/login';
-import { Signup } from '../pages/signup/signup';
 
-import { HomePage } from '../pages/home/home';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HTTPService } from './httpservice.service';
-import { InfoPage } from '../pages/info/info';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { MapPage } from '../pages/map/map';
 import { Camera}  from '@ionic-native/camera';
-import { CameraPage } from '../pages/camera/camera';
 
 import { File } from '@ionic-native/file';
 import { CommonProvider } from '../providers/common/common';
@@ -29,14 +22,7 @@ import { CommonProvider } from '../providers/common/common';
 @NgModule({
   declarations: [
     MyApp,
-    RocketsPage,
-    InfoPage,
-    MapPage,
-    Welcome,
-    Login,
-    Signup,
-    CameraPage,
-    HomePage
+    MapPage
   ],
   imports: [
     BrowserModule, HttpModule,
@@ -46,14 +32,7 @@ import { CommonProvider } from '../providers/common/common';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    RocketsPage,
-    InfoPage,
-    MapPage,
-    Welcome,
-    Login,
-    Signup,
-    CameraPage,
-    HomePage
+    MapPage
   ],
   providers: [
     File,
