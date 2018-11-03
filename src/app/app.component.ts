@@ -7,29 +7,33 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { MapPage } from '../pages/map/map';
-import { Welcome } from '../pages/welcome/welcome';
+//import { Welcome } from '../pages/welcome/welcome';
 // import { CameraPage } from '../pages/camera/camera';
-
+import { LoginPage } from '../pages/login/login';
 import { File } from '@ionic-native/file';
-import { HomePage } from '../pages/home/home';
+import { AuthService } from '../services/auth.service';
+
+//import { HomePage } from '../pages/home/home';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = MapPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private gl: Geolocation) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private gl: Geolocation, private auth: AuthService) {
     this.initializeApp();
+
 
     // used for an example of ngFor and navigation
     this.pages = [
       // {title: 'Rockets', component: RocketsPage},
-      {title: 'Welcome', component: Welcome},
-      {title: 'Map', component: MapPage},
+    //  {title: 'Welcome', component: Welcome},
+    {title: 'Map', component: MapPage},
+	//	{title: 'Login', component: LoginPage}
       // {title: 'Camera', component: CameraPage}
     ];
 
@@ -43,7 +47,7 @@ export class MyApp {
       this.statusBar.overlaysWebView(false);
       this.statusBar.show();
       this.splashScreen.hide();
-
+			//this.rootPage = LoginPage;
       /**
        * Shows the current location coordinates. Plugins can be used once the platform is ready.
        */
