@@ -34,15 +34,15 @@ export class MapPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPage');
     var planes = [
-      ["User1",29.96497,76.86808],
-      ["User2",29.96269,76.86696],
-      ["User3",29.96413,76.8621],
-      ["User4",29.96585,76.86659],
-      ["User5",29.96163,76.86726],
-      ["User6",29.9683,76.86081],
-      ["User7",29.96079,76.8683],
-      ["User8",29.96414,76.86632],
-      ["User9",29.96285,76.86274]
+      ["User1",26.50507,80.22928],
+      ["User2",26.50509,80.22926],
+      ["User3",26.50503,80.22921],
+      ["User4",26.50505,80.22929],
+      ["User5",26.50503,80.22926],
+      ["User6",26.50507,80.22921],
+      ["User7",26.50509,80.22923],
+      ["User8",26.50504,80.22922],
+      ["User9",26.50505,80.22924]
       ];
     // var planes = [
     //   {lat: 30.99497, lng: 76.50808},
@@ -55,7 +55,7 @@ export class MapPage {
      */
     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attributions: 'www.tphangout.com',
-      maxZoom: 20
+      maxZoom: 24
     }).addTo(map);
     var mylat,mylng;
     map.locate({
@@ -90,7 +90,7 @@ export class MapPage {
     })
     // console.log(mylat + " " + mylng);
     // console.log("coming here");
-    // L.marker([29.9605, 76.865]).addTo(map)
+    // L.marker([26.5005, 80.225]).addTo(map)
     // .bindPopup('Location of<br>another user');
 
     for (var i = 0; i < planes.length; i++) {
@@ -142,13 +142,13 @@ export class MapPage {
           nearest_text = <string>planes[i][0];
         }
         var text = <string>planes[i][0];
-        if(markerDist<100){
+        if(markerDist<50){
           nearest.push(text);
-          // alert("Marker within 200 metres is/are: " + text);
+          // alert("Marker within 50 metres is/are: " + text);
         }
       }
       // nearest.sort();
-      console.log("Nearest 100 metre markers are: " + nearest.length);
+      console.log("Nearest 50 metre markers are: " + nearest.length);
       for(var i = 0; i<nearest.length; i++){
         console.log(nearest[i]);
       }
